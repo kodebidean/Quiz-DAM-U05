@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ LMSG Ciencia</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body class="">
+    <div class="text-white h-screen flex justify-center text-center items-center bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900">
+        <div class="flex-col space-y-10">
+            <!--Titulo-->
+            <h1 class="text-4xl font-extrabold">TEST CIENCIA</h1>
+
+            <!--Botones de Inicio de Juego e Instrucciones-->
+            <div id="panelJuego" class="">
+                <button id="btnJuego" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Iniciar Juego</button>
+                <button id="btnInstrucciones" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Instrucciones</button>
+            </div>
+
+            <!--Elemento contenedor del juego-->
+            <div id="juego" class="hidden max-w-3xl p-4">                
+                <!--Elemento interfaz-->
+                <div class="border-black border-2 rounded-xl">
+                    <!--Barra de cierre del juego-->
+                    <div class="text-right overflow-hidden h-6 bg-black rounded-t-xl text-white">
+                        <button id="btnCloseJuego" class="mr-0 text-right px-2 transition hover:font-bold">Cerrar X</button>
+                    </div>
+                    <!--Elemento de puntuación-->
+                    <div class="text-left ml-2 mb-6">
+                        <div id="score" class="inline-table p-2 text-right text-sm overflow-hidden text-yellow-400"></div>
+                    </div>
+                    <!--Elemento de Pregunta Actual-->
+                    <div id="actualQuest" class="mx-4 font-bold text-xl mb-4"></div>
+                    <div class="mb-10">
+                        <!--Elemento de Opciones de la pregunta actual-->
+                        <div id="actualOptions" class="m-2 grid grid-cols-1 md:grid-cols-4 gap-4 mb-4"></div>
+                    </div>
+                    <!--Elemento contador de preguntas-->
+                    <div class="text-end text-sm opacity-70 border-t-2 border-black">
+                        <div id="contadorQuest" class=" bottom-0 m-4"></div>
+                    </div>
+                </div>    
+                
+            </div>
+
+            <!--Resultado final-->
+            <div id="resultadoPanel" class="hidden mt-4" >
+                
+                <div id="resultado" class="text-xl md:text-2xl lg:text-4xl font-extrabold text-yellow-400"></div>
+                <div class="transition p-3 inline-table text-center overflow-hidden h-6 mt-10 bg-black rounded-xl text-white hover:font-bold hover:scale-110 hover:bg-slate-900">
+                    <button id="btnVolver" class="text-right px-2">Volver a Inicio</button>   
+                </div>
+            </div>
+            <!--Elemento contenedor de las instrucciones-->
+            <div id="instrucciones" class="hidden">
+                <div class="text-right overflow-hidden h-6 bg-black rounded-t-xl text-white">
+                    <button id="btnCloseInfo" class="mr-0 text-right px-2 transition hover:font-bold">Cerrar X</button>   
+                </div>
+                <div class="text-justify text-white rounded-b-xl p-5 border-black border-2">
+                    <ul>
+                        <li>1. Responde a las 10 preguntas del test y consigue la mejor puntuación. </li>
+                        <li>2. Marca la respuesta que creas correcta y pulsa en siguiente. </li>
+                        <li>3. Cada pregunta respondida correctamente sumará 10 puntos al marcador. </li>
+                        <li>4. Cada pregunta respondida incorrectamente no sumará puntos al marcador. </li>
+                        <li>5. Una vez concluidas las 10 preguntas se mostrará la puntuación final. </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
